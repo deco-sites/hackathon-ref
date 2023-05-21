@@ -12,7 +12,6 @@
           "type": "string",
           "not": {
             "enum": [
-              "deco-sites/hackathon-ref/functions/LoadGitHubRaw.ts",
               "deco-sites/std/functions/butterCMSAds.ts",
               "deco-sites/std/functions/butterCMSBrands.ts",
               "deco-sites/std/functions/butterCMSCategories.ts",
@@ -59,6 +58,18 @@
               "deco-sites/std/loaders/vtex/navbar.ts",
               "deco-sites/std/loaders/vtex/user.ts",
               "deco-sites/std/loaders/vtex/wishlist.ts",
+              "./islands/AddToCartButton.tsx",
+              "./islands/CampaignTimer-Porral_28-5.tsx",
+              "./islands/HeaderButton.tsx",
+              "./islands/HeaderModals.tsx",
+              "./islands/HeaderSearchbar.tsx",
+              "./islands/Newsletter.tsx",
+              "./islands/OutOfStock.tsx",
+              "./islands/ProductImageZoom.tsx",
+              "./islands/SearchControls.tsx",
+              "./islands/ShippingSimulation.tsx",
+              "./islands/SliderJS.tsx",
+              "./islands/WishlistButton.tsx",
               "$live/handlers/devPage.ts",
               "$live/handlers/fresh.ts",
               "$live/handlers/proxy.ts",
@@ -70,9 +81,22 @@
               "$live/sections/PageInclude.tsx",
               "$live/sections/Slot.tsx",
               "$live/sections/UseSlot.tsx",
-              "deco-sites/hackathon-ref/sections/DesignSystem.tsx",
-              "deco-sites/hackathon-ref/sections/GetStarted.tsx",
-              "deco-sites/hackathon-ref/sections/Head.tsx",
+              "deco-sites/fashion/sections/BannerGrid.tsx",
+              "deco-sites/fashion/sections/BannerPLP.tsx",
+              "deco-sites/fashion/sections/Carousel.tsx",
+              "deco-sites/fashion/sections/CookieConsent.tsx",
+              "deco-sites/fashion/sections/DesignSystem.tsx",
+              "deco-sites/fashion/sections/Features.tsx",
+              "deco-sites/fashion/sections/Footer.tsx",
+              "deco-sites/fashion/sections/Header.tsx",
+              "deco-sites/fashion/sections/Highlights.tsx",
+              "deco-sites/fashion/sections/LinkTree.tsx",
+              "deco-sites/fashion/sections/ProductDetails.tsx",
+              "deco-sites/fashion/sections/ProductShelf.tsx",
+              "deco-sites/fashion/sections/SearchResult.tsx",
+              "deco-sites/fashion/sections/Timers/CampaignTimer.Porral_28.5.tsx",
+              "deco-sites/fashion/sections/WhatsApp.tsx",
+              "deco-sites/fashion/sections/WishlistGallery.tsx",
               "deco-sites/std/sections/Analytics.tsx",
               "deco-sites/std/sections/configButterCMS.global.tsx",
               "deco-sites/std/sections/configOCC.global.tsx",
@@ -109,38 +133,14 @@
               "deco-sites/std/actions/vtex/cart/updateItems.ts",
               "deco-sites/std/actions/vtex/cart/updateProfile.ts",
               "deco-sites/std/actions/vtex/cart/updateUser.ts",
+              "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
+              "deco-sites/std/actions/vtex/notifyme.ts",
               "deco-sites/std/actions/vtex/wishlist/addItem.ts",
               "deco-sites/std/actions/vtex/wishlist/removeItem.ts"
             ]
           }
         }
       }
-    },
-    "ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL2Z1bmN0aW9ucy9Mb2FkR2l0SHViUmF3LnRz@Props": {
-      "type": "object",
-      "properties": {
-        "repo": {
-          "type": "string",
-          "description": "Complete user/repo format",
-          "title": "Repo"
-        },
-        "branch": {
-          "type": "string",
-          "description": "Branch",
-          "title": "Branch"
-        },
-        "path": {
-          "type": "string",
-          "description": "Path to fetch, or leave blank and add :path route param.",
-          "title": "Path"
-        }
-      },
-      "required": [
-        "repo",
-        "branch",
-        "path"
-      ],
-      "title": "deco-sites/hackathon-ref/functions/LoadGitHubRaw.ts@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvYnV0dGVyQ01TL3R5cGVzLnRz@Category": {
       "type": "object",
@@ -1654,8 +1654,8 @@
           }
         },
         {
-          "title": "VTEX product details page - Intelligent Search (deprecated)",
-          "description": "Works on routes of type /:slug/p",
+          "title": "VTEX Intelligent Search - Product Details page",
+          "description": "For routes of type /:slug/p",
           "deprecated": true,
           "type": "object",
           "required": [
@@ -1694,8 +1694,8 @@
           }
         },
         {
-          "title": "VTEX product details page - Portal",
-          "description": "Works on routes of type /:slug/p",
+          "title": "VTEX Legacy - Product Details page",
+          "description": "For routes of type /:slug/p",
           "type": "object",
           "allOf": [
             {
@@ -1784,7 +1784,7 @@
           "type": "null"
         },
         {
-          "title": "Product list loader",
+          "title": "Shopify - Search Products",
           "description": "Usefull for shelves and static galleries.",
           "type": "object",
           "allOf": [
@@ -1806,8 +1806,8 @@
           }
         },
         {
-          "title": "Product list loader",
-          "description": "Usefull for shelves and static galleries.",
+          "title": "VNDA - Search Products",
+          "description": "Use it in Shelves and static Galleries.",
           "type": "object",
           "allOf": [
             {
@@ -1828,7 +1828,7 @@
           }
         },
         {
-          "title": "VTEX product list - legacy (deprecated)",
+          "title": "VTEX - Search Products - legacy (deprecated)",
           "description": "Usefull for shelves and static galleries.",
           "deprecated": true,
           "type": "object",
@@ -1851,7 +1851,7 @@
           }
         },
         {
-          "title": "VTEX related products - legacy (deprecated)",
+          "title": "VTEX Legacy - Related Products (deprecated)",
           "description": "Works on routes of type /:slug/p",
           "deprecated": true,
           "type": "object",
@@ -1874,8 +1874,8 @@
           }
         },
         {
-          "title": "VTEX product list - Intelligent Search (deprecated)",
-          "description": "Usefull for shelves and static galleries.",
+          "title": "VTEX Intelligent Search - Search Products",
+          "description": "Use it in Shelves and static Galleries.",
           "deprecated": true,
           "type": "object",
           "allOf": [
@@ -1919,8 +1919,8 @@
           }
         },
         {
-          "title": "VTEX product list - Portal",
-          "description": "Usefull for shelves and static galleries.",
+          "title": "VTEX Legacy - Search Products",
+          "description": "Use it in Shelves and static Galleries.",
           "type": "object",
           "allOf": [
             {
@@ -2262,7 +2262,7 @@
           "type": "null"
         },
         {
-          "title": "Product listing page loader",
+          "title": "Shopify - Product Listing page",
           "description": "Returns data ready for search pages like category,brand pages",
           "type": "object",
           "allOf": [
@@ -2284,8 +2284,8 @@
           }
         },
         {
-          "title": "Product listing page loader",
-          "description": "Returns data ready for search pages like category,brand pages",
+          "title": "VNDA - Product Listing page",
+          "description": "Useful for category, search, brand and collection pages.",
           "type": "object",
           "allOf": [
             {
@@ -2306,8 +2306,8 @@
           }
         },
         {
-          "title": "VTEX product listing page - legacy (deprecated)",
-          "description": "Returns data ready for search pages like category,brand pages",
+          "title": "VTEX Legacy - Product Listing page",
+          "description": "Useful for category, search, brand and collection pages.",
           "deprecated": true,
           "type": "object",
           "allOf": [
@@ -2329,8 +2329,8 @@
           }
         },
         {
-          "title": "VTEX product listing page - Intelligent Search (deprecated)",
-          "description": "Returns data ready for search pages like category,brand pages",
+          "title": "VTEX Intelligent Search - Product Listing page",
+          "description": "Useful for category, search, brand and collection pages.",
           "deprecated": true,
           "type": "object",
           "allOf": [
@@ -2352,8 +2352,8 @@
           }
         },
         {
-          "title": "Product list loader",
-          "description": "Usefull for shelves and static galleries.",
+          "title": "VTEX - Load Wishlist",
+          "description": "Used with vtex.wish-list app",
           "deprecated": true,
           "type": "object",
           "allOf": [
@@ -2375,7 +2375,7 @@
           }
         },
         {
-          "title": "VTEX product listing page - Intelligent Search",
+          "title": "VTEX Intelligent Search - Product Listing page",
           "description": "Returns data ready for search pages like category,brand pages",
           "type": "object",
           "allOf": [
@@ -2433,7 +2433,7 @@
         },
         "count": {
           "type": "number",
-          "title": "Count",
+          "title": "Items per page",
           "description": "number of products per page to display"
         }
       },
@@ -2524,7 +2524,7 @@
         },
         "count": {
           "type": "number",
-          "title": "Count",
+          "title": "Items per page",
           "description": "number of products per page to display"
         }
       },
@@ -2577,7 +2577,7 @@
         },
         "count": {
           "type": "number",
-          "title": "Count",
+          "title": "Items per page",
           "description": "number of products per page to display"
         },
         "ft": {
@@ -2647,7 +2647,7 @@
             }
           ],
           "type": "string",
-          "title": "Sort"
+          "title": "Sorting"
         },
         "filters": {
           "anyOf": [
@@ -2661,7 +2661,7 @@
             }
           ],
           "type": "string",
-          "title": "Filters",
+          "title": "Filter behavior",
           "description": "Set to static to not change the facets when the user filters the search. Dynamic will only show the filters containing products after each filter action"
         },
         "pageOffset": {
@@ -2669,9 +2669,8 @@
             "number",
             "null"
           ],
-          "title": "Page Offset",
-          "description": "Set the starting page offset. Default to 1.",
-          "default": "1"
+          "title": "Starting page query parameter offset.",
+          "description": "Set the starting page offset. Default to 1."
         }
       },
       "required": [
@@ -2714,7 +2713,7 @@
             }
           ],
           "type": "string",
-          "title": "Cross Selling",
+          "title": "Related Products",
           "description": "VTEX Cross Selling API. This loader only works on routes of type /:slug/p"
         },
         "count": {
@@ -2924,7 +2923,7 @@
           "items": {
             "type": "string"
           },
-          "title": "Collection",
+          "title": "Collection ID",
           "pattern": "\\d*"
         }
       },
@@ -2972,7 +2971,7 @@
         },
         "count": {
           "type": "number",
-          "title": "Count",
+          "title": "Items per page",
           "description": "number of products per page to display"
         },
         "sort": {
@@ -3011,7 +3010,7 @@
             }
           ],
           "type": "string",
-          "title": "Sort"
+          "title": "Sorting"
         },
         "fuzzy": {
           "anyOf": [
@@ -3049,9 +3048,8 @@
             "number",
             "null"
           ],
-          "title": "Page Offset",
-          "description": "Set the starting page offset. Default to 1.",
-          "default": "1"
+          "title": "Starting page query parameter offset.",
+          "description": "Set the starting page offset. Default to 1."
         }
       },
       "required": [
@@ -3178,7 +3176,7 @@
       "properties": {
         "count": {
           "type": "number",
-          "title": "Count",
+          "title": "Items per page",
           "description": "Number of products per page to display",
           "default": "12"
         }
@@ -6037,7 +6035,7 @@
       "properties": {
         "collection": {
           "type": "string",
-          "title": "Collection",
+          "title": "Collection ID (e.g.: 139)",
           "pattern": "\\d*"
         },
         "sort": {
@@ -6421,7 +6419,7 @@
             }
           ],
           "type": "string",
-          "title": "Cross Selling",
+          "title": "Related Products",
           "description": "VTEX Cross Selling API. This loader only works on routes of type /:slug/p"
         },
         "count": {
@@ -6576,7 +6574,7 @@
       "properties": {
         "count": {
           "type": "number",
-          "title": "Count",
+          "title": "Items per page",
           "description": "Number of products per page to display",
           "default": "12"
         }
@@ -6585,6 +6583,58 @@
         "count"
       ],
       "title": "deco-sites/std/packs/vtex/loaders/wishlist.ts@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvQ2FtcGFpZ25UaW1lci1Qb3JyYWxfMjgtNS50c3g=@TimerProps": {
+      "type": "object",
+      "properties": {
+        "endDate": {
+          "type": "string",
+          "title": "End Date"
+        }
+      },
+      "required": [
+        "endDate"
+      ],
+      "title": "deco-sites/fashion/islands/CampaignTimer-Porral_28-5.tsx@TimerProps"
+    },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SKU": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "number",
+          "title": "Id"
+        },
+        "quantity": {
+          "type": "number",
+          "title": "Quantity"
+        },
+        "seller": {
+          "type": "string",
+          "title": "Seller"
+        }
+      },
+      "required": [
+        "id",
+        "quantity",
+        "seller"
+      ],
+      "title": "SKU"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2hpcHBpbmdTaW11bGF0aW9uLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC90eXBlcy50cw==@SKU"
+          },
+          "title": "Items"
+        }
+      },
+      "required": [
+        "items"
+      ],
+      "title": "deco-sites/fashion/components/ui/ShippingSimulation.tsx@Props"
     },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9wYWdlLnRz@Page": {
       "$ref": "#/root/pages",
@@ -6893,7 +6943,368 @@
       ],
       "title": "deco-cx/live/sections/UseSlot.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors": {
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+      "type": "string",
+      "format": "image-uri",
+      "title": "Image"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner": {
+      "type": "object",
+      "properties": {
+        "srcMobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Mobile"
+        },
+        "srcDesktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src Desktop"
+        },
+        "alt": {
+          "type": "string",
+          "description": "Image alt text",
+          "title": "Alt"
+        },
+        "href": {
+          "type": "string",
+          "description": "When you click you go to",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "srcMobile",
+        "alt",
+        "href"
+      ],
+      "title": "Banner"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner"
+      },
+      "title": "Banner[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "itemsPerLine": {
+          "type": "object",
+          "properties": {
+            "mobile": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "const": 1
+                },
+                {
+                  "type": "number",
+                  "const": 2
+                }
+              ],
+              "type": "number",
+              "title": "Mobile"
+            },
+            "desktop": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "const": 1
+                },
+                {
+                  "type": "number",
+                  "const": 2
+                },
+                {
+                  "type": "number",
+                  "const": 4
+                },
+                {
+                  "type": "number",
+                  "const": 6
+                },
+                {
+                  "type": "number",
+                  "const": 8
+                }
+              ],
+              "type": "number",
+              "title": "Desktop"
+            }
+          },
+          "required": [],
+          "title": "Items Per Line",
+          "description": "Default is 2 for mobile and all for desktop"
+        },
+        "borderRadius": {
+          "type": "object",
+          "properties": {
+            "mobile": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "none"
+                },
+                {
+                  "type": "string",
+                  "const": "sm"
+                },
+                {
+                  "type": "string",
+                  "const": "md"
+                },
+                {
+                  "type": "string",
+                  "const": "lg"
+                },
+                {
+                  "type": "string",
+                  "const": "xl"
+                },
+                {
+                  "type": "string",
+                  "const": "2xl"
+                },
+                {
+                  "type": "string",
+                  "const": "3xl"
+                },
+                {
+                  "type": "string",
+                  "const": "full"
+                }
+              ],
+              "type": "string",
+              "title": "Mobile"
+            },
+            "desktop": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "const": "none"
+                },
+                {
+                  "type": "string",
+                  "const": "sm"
+                },
+                {
+                  "type": "string",
+                  "const": "md"
+                },
+                {
+                  "type": "string",
+                  "const": "lg"
+                },
+                {
+                  "type": "string",
+                  "const": "xl"
+                },
+                {
+                  "type": "string",
+                  "const": "2xl"
+                },
+                {
+                  "type": "string",
+                  "const": "3xl"
+                },
+                {
+                  "type": "string",
+                  "const": "full"
+                }
+              ],
+              "type": "string",
+              "title": "Desktop"
+            }
+          },
+          "required": [],
+          "title": "Border Radius",
+          "description": "Item's border radius in px"
+        },
+        "banners": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Banner[]",
+          "title": "Banners"
+        }
+      },
+      "required": [
+        "itemsPerLine",
+        "borderRadius",
+        "banners"
+      ],
+      "title": "deco-sites/fashion/components/ui/BannerGrid.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyUExQLnRzeA==@Banner": {
+      "type": "object",
+      "properties": {
+        "matcher": {
+          "type": "string",
+          "description": "RegExp to enable this banner on the current URL. Use /feminino/* to display this banner on feminino category",
+          "title": "Matcher"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "text to be rendered on top of the image",
+          "title": "Title"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "text to be rendered on top of the image",
+          "title": "Subtitle"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "desktop": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Desktop"
+            },
+            "mobile": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Mobile"
+            },
+            "alt": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Alt"
+            }
+          },
+          "required": [
+            "desktop",
+            "mobile"
+          ],
+          "title": "Image"
+        }
+      },
+      "required": [
+        "matcher",
+        "image"
+      ],
+      "title": "Banner"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyUExQLnRzeA==@Banner[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyUExQLnRzeA==@Banner"
+      },
+      "title": "Banner[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyUExQLnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
+          "title": "Page"
+        },
+        "banners": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyUExQLnRzeA==@Banner[]",
+          "title": "Banners"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/fashion/components/ui/BannerPLP.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner": {
+      "type": "object",
+      "properties": {
+        "desktop": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "desktop otimized image",
+          "title": "Desktop"
+        },
+        "mobile": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "mobile otimized image",
+          "title": "Mobile"
+        },
+        "alt": {
+          "type": "string",
+          "description": "Image's alt text",
+          "title": "Alt"
+        },
+        "action": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string",
+              "title": "Href"
+            },
+            "title": {
+              "type": "string",
+              "title": "Title"
+            },
+            "subTitle": {
+              "type": "string",
+              "title": "Sub Title"
+            },
+            "label": {
+              "type": "string",
+              "title": "Label"
+            }
+          },
+          "required": [
+            "href",
+            "title",
+            "subTitle",
+            "label"
+          ],
+          "title": "Action"
+        }
+      },
+      "required": [
+        "desktop",
+        "mobile",
+        "alt"
+      ],
+      "title": "Banner"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner"
+      },
+      "title": "Banner[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "images": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Banner[]",
+          "title": "Images"
+        },
+        "preload": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "description": "Check this option when this banner is the biggest image on the screen for image optimizations",
+          "title": "Preload"
+        },
+        "interval": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Autoplay interval",
+          "description": "time (in seconds) to start the carousel autoplay"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/fashion/components/ui/BannerCarousel.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors": {
       "type": "object",
       "properties": {
         "primary": {
@@ -6902,6 +7313,71 @@
           "default": "#003232",
           "title": "Primary"
         },
+        "secondary": {
+          "type": "string",
+          "format": "color",
+          "default": "#8C3D3D",
+          "title": "Secondary"
+        },
+        "accent": {
+          "type": "string",
+          "format": "color",
+          "default": "#00FF7F",
+          "title": "Accent"
+        },
+        "neutral": {
+          "type": "string",
+          "format": "color",
+          "default": "#333333",
+          "title": "Neutral"
+        },
+        "base-100": {
+          "type": "string",
+          "format": "color",
+          "default": "#FFFFFF",
+          "title": "Base-100"
+        },
+        "success": {
+          "type": "string",
+          "format": "color",
+          "default": "#EAFAF2",
+          "title": "Success"
+        },
+        "warning": {
+          "type": "string",
+          "format": "color",
+          "default": "#FFF8E6",
+          "title": "Warning"
+        },
+        "error": {
+          "type": "string",
+          "format": "color",
+          "default": "#FFE9E5",
+          "title": "Error"
+        },
+        "info": {
+          "type": "string",
+          "format": "color",
+          "default": "#F0F5FF",
+          "title": "Info"
+        }
+      },
+      "required": [
+        "primary",
+        "secondary",
+        "accent",
+        "neutral",
+        "base-100",
+        "success",
+        "warning",
+        "error",
+        "info"
+      ],
+      "title": "Colors"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@OptionalColors": {
+      "type": "object",
+      "properties": {
         "primary-focus": {
           "type": [
             "string",
@@ -6919,12 +7395,6 @@
           "format": "color",
           "description": "Will be a readable tone of primary if not specified",
           "title": "Primary-content"
-        },
-        "secondary": {
-          "type": "string",
-          "format": "color",
-          "default": "#8C3D3D",
-          "title": "Secondary"
         },
         "secondary-focus": {
           "type": [
@@ -6944,12 +7414,6 @@
           "description": "Will be a readable tone of secondary if not specified",
           "title": "Secondary-content"
         },
-        "accent": {
-          "type": "string",
-          "format": "color",
-          "default": "#00FF7F",
-          "title": "Accent"
-        },
         "accent-focus": {
           "type": [
             "string",
@@ -6968,12 +7432,6 @@
           "description": "Will be a readable tone of accent if not specified",
           "title": "Accent-content"
         },
-        "neutral": {
-          "type": "string",
-          "format": "color",
-          "default": "#333333",
-          "title": "Neutral"
-        },
         "neutral-focus": {
           "type": [
             "string",
@@ -6991,12 +7449,6 @@
           "format": "color",
           "description": "Will be a readable tone of neutral if not specified",
           "title": "Neutral-content"
-        },
-        "base-100": {
-          "type": "string",
-          "format": "color",
-          "default": "#FFFFFF",
-          "title": "Base-100"
         },
         "base-200": {
           "type": [
@@ -7025,12 +7477,6 @@
           "description": "Will be a readable tone of base-100 if not specified",
           "title": "Base-content"
         },
-        "success": {
-          "type": "string",
-          "format": "color",
-          "default": "#EAFAF2",
-          "title": "Success"
-        },
         "success-content": {
           "type": [
             "string",
@@ -7039,12 +7485,6 @@
           "format": "color",
           "description": "Will be a readable success of neutral if not specified",
           "title": "Success-content"
-        },
-        "warning": {
-          "type": "string",
-          "format": "color",
-          "default": "#FFF8E6",
-          "title": "Warning"
         },
         "warning-content": {
           "type": [
@@ -7055,12 +7495,6 @@
           "description": "Will be a readable tone of warning if not specified",
           "title": "Warning-content"
         },
-        "error": {
-          "type": "string",
-          "format": "color",
-          "default": "#FFE9E5",
-          "title": "Error"
-        },
         "error-content": {
           "type": [
             "string",
@@ -7069,12 +7503,6 @@
           "format": "color",
           "description": "Will be a readable tone of error if not specified",
           "title": "Error-content"
-        },
-        "info": {
-          "type": "string",
-          "format": "color",
-          "default": "#F0F5FF",
-          "title": "Info"
         },
         "info-content": {
           "type": [
@@ -7086,80 +7514,88 @@
           "title": "Info-content"
         }
       },
-      "required": [
-        "primary",
-        "secondary",
-        "accent",
-        "neutral",
-        "base-100",
-        "success",
-        "warning",
-        "error",
-        "info"
-      ],
-      "title": "Colors"
+      "required": [],
+      "title": "OptionalColors"
     },
-    "ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Miscellaneous": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@81021f42745ad46259b221b9e6a8ee56&Colors": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "optional": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@OptionalColors",
+              "title": "Optional"
+            }
+          },
+          "required": []
+        }
+      ],
+      "title": "81021f42745ad46259b221b9e6a8ee56&Colors"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Miscellaneous": {
       "type": "object",
       "properties": {
         "--rounded-box": {
           "type": "string",
           "default": "1rem",
-          "title": "--rounded-box",
+          "title": "Rounded box",
           "description": "border radius rounded-box utility class, used in card and other large boxes"
         },
         "--rounded-btn": {
           "type": "string",
           "default": "0.5rem",
-          "title": "--rounded-btn",
+          "title": "Rounded button",
           "description": "border radius rounded-btn utility class, used in buttons and similar element"
         },
         "--rounded-badge": {
           "type": "string",
           "default": "1.9rem",
-          "title": "--rounded-badge",
+          "title": "Rounded badge",
           "description": "border radius rounded-badge utility class, used in badges and similar"
         },
         "--animation-btn": {
           "type": "string",
           "default": "0.25s",
-          "title": "--animation-btn",
+          "title": "Animation button",
           "description": "duration of animation when you click on button"
         },
         "--animation-input": {
           "type": "string",
           "default": "0.2s",
-          "title": "--animation-input",
+          "title": "Animation input",
           "description": "duration of animation for inputs like checkbox, toggle, radio, etc"
         },
         "--btn-text-case": {
           "type": "string",
           "default": "uppercase",
-          "title": "--btn-text-case",
+          "title": "Button text case",
           "description": "set default text transform for buttons"
         },
         "--btn-focus-scale": {
           "type": "string",
           "default": "0.95",
-          "title": "--btn-focus-scale",
+          "title": "Button focus scale",
           "description": "scale transform of button when you focus on it"
         },
         "--border-btn": {
           "type": "string",
           "default": "1px",
-          "title": "--border-btn",
+          "title": "Border button",
           "description": "border width of buttons"
         },
         "--tab-border": {
           "type": "string",
           "default": "1px",
-          "title": "--tab-border",
+          "title": "Tab border",
           "description": "border width of tabs"
         },
         "--tab-radius": {
           "type": "string",
           "default": "0.5rem",
-          "title": "--tab-radius",
+          "title": "Tab radius",
           "description": "border radius of tabs"
         }
       },
@@ -7177,7 +7613,7 @@
       ],
       "title": "Miscellaneous"
     },
-    "ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Font": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Font": {
       "type": "object",
       "properties": {
         "fontFamily": {
@@ -7196,76 +7632,893 @@
       ],
       "title": "Font"
     },
-    "ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Props": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Props": {
       "type": "object",
       "properties": {
         "colors": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Colors",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@81021f42745ad46259b221b9e6a8ee56&Colors",
           "title": "Colors"
         },
         "miscellaneous": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Miscellaneous",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Miscellaneous",
           "title": "Miscellaneous"
         },
         "fonts": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Font",
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Font",
           "title": "Fonts"
         }
       },
       "required": [],
-      "title": "deco-sites/hackathon-ref/sections/DesignSystem.tsx@Props"
+      "title": "deco-sites/fashion/sections/DesignSystem.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0dldFN0YXJ0ZWQudHN4@Props": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature": {
       "type": "object",
       "properties": {
-        "enableInspectVSCode": {
-          "type": [
-            "boolean",
-            "null"
+        "icon": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "ChevronLeft"
+            },
+            {
+              "type": "string",
+              "const": "ChevronRight"
+            },
+            {
+              "type": "string",
+              "const": "ChevronUp"
+            },
+            {
+              "type": "string",
+              "const": "ChevronDown"
+            },
+            {
+              "type": "string",
+              "const": "QuestionMarkCircle"
+            },
+            {
+              "type": "string",
+              "const": "User"
+            },
+            {
+              "type": "string",
+              "const": "ShoppingCart"
+            },
+            {
+              "type": "string",
+              "const": "Bars3"
+            },
+            {
+              "type": "string",
+              "const": "Heart"
+            },
+            {
+              "type": "string",
+              "const": "MagnifyingGlass"
+            },
+            {
+              "type": "string",
+              "const": "XMark"
+            },
+            {
+              "type": "string",
+              "const": "Plus"
+            },
+            {
+              "type": "string",
+              "const": "Minus"
+            },
+            {
+              "type": "string",
+              "const": "MapPin"
+            },
+            {
+              "type": "string",
+              "const": "Phone"
+            },
+            {
+              "type": "string",
+              "const": "Elo"
+            },
+            {
+              "type": "string",
+              "const": "Mastercard"
+            },
+            {
+              "type": "string",
+              "const": "Visa"
+            },
+            {
+              "type": "string",
+              "const": "Pix"
+            },
+            {
+              "type": "string",
+              "const": "Logo"
+            },
+            {
+              "type": "string",
+              "const": "Facebook"
+            },
+            {
+              "type": "string",
+              "const": "Instagram"
+            },
+            {
+              "type": "string",
+              "const": "Tiktok"
+            },
+            {
+              "type": "string",
+              "const": "Truck"
+            },
+            {
+              "type": "string",
+              "const": "Discount"
+            },
+            {
+              "type": "string",
+              "const": "Return"
+            },
+            {
+              "type": "string",
+              "const": "CreditCard"
+            },
+            {
+              "type": "string",
+              "const": "Deco"
+            },
+            {
+              "type": "string",
+              "const": "Discord"
+            },
+            {
+              "type": "string",
+              "const": "Trash"
+            },
+            {
+              "type": "string",
+              "const": "FilterList"
+            },
+            {
+              "type": "string",
+              "const": "WhatsApp"
+            },
+            {
+              "type": "string",
+              "const": "ArrowsPointingOut"
+            }
           ],
-          "title": "Enable Inspect V S Code"
+          "type": "string",
+          "description": "Image src",
+          "title": "Icon"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title",
+          "title": "Title"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description and Image alt text",
+          "title": "Description"
+        }
+      },
+      "required": [
+        "icon",
+        "title",
+        "description"
+      ],
+      "title": "Feature"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature"
+      },
+      "title": "Feature[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "features": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Feature[]",
+          "title": "Features"
+        }
+      },
+      "required": [
+        "features"
+      ],
+      "title": "deco-sites/fashion/components/ui/Features.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@StringItem": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "label",
+        "href"
+      ],
+      "title": "StringItem"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "ChevronLeft"
+            },
+            {
+              "type": "string",
+              "const": "ChevronRight"
+            },
+            {
+              "type": "string",
+              "const": "ChevronUp"
+            },
+            {
+              "type": "string",
+              "const": "ChevronDown"
+            },
+            {
+              "type": "string",
+              "const": "QuestionMarkCircle"
+            },
+            {
+              "type": "string",
+              "const": "User"
+            },
+            {
+              "type": "string",
+              "const": "ShoppingCart"
+            },
+            {
+              "type": "string",
+              "const": "Bars3"
+            },
+            {
+              "type": "string",
+              "const": "Heart"
+            },
+            {
+              "type": "string",
+              "const": "MagnifyingGlass"
+            },
+            {
+              "type": "string",
+              "const": "XMark"
+            },
+            {
+              "type": "string",
+              "const": "Plus"
+            },
+            {
+              "type": "string",
+              "const": "Minus"
+            },
+            {
+              "type": "string",
+              "const": "MapPin"
+            },
+            {
+              "type": "string",
+              "const": "Phone"
+            },
+            {
+              "type": "string",
+              "const": "Elo"
+            },
+            {
+              "type": "string",
+              "const": "Mastercard"
+            },
+            {
+              "type": "string",
+              "const": "Visa"
+            },
+            {
+              "type": "string",
+              "const": "Pix"
+            },
+            {
+              "type": "string",
+              "const": "Logo"
+            },
+            {
+              "type": "string",
+              "const": "Facebook"
+            },
+            {
+              "type": "string",
+              "const": "Instagram"
+            },
+            {
+              "type": "string",
+              "const": "Tiktok"
+            },
+            {
+              "type": "string",
+              "const": "Truck"
+            },
+            {
+              "type": "string",
+              "const": "Discount"
+            },
+            {
+              "type": "string",
+              "const": "Return"
+            },
+            {
+              "type": "string",
+              "const": "CreditCard"
+            },
+            {
+              "type": "string",
+              "const": "Deco"
+            },
+            {
+              "type": "string",
+              "const": "Discord"
+            },
+            {
+              "type": "string",
+              "const": "Trash"
+            },
+            {
+              "type": "string",
+              "const": "FilterList"
+            },
+            {
+              "type": "string",
+              "const": "WhatsApp"
+            },
+            {
+              "type": "string",
+              "const": "ArrowsPointingOut"
+            }
+          ],
+          "type": "string",
+          "title": "Icon"
+        }
+      },
+      "required": [
+        "icon"
+      ],
+      "title": "IconItem"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@StringItem"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem"
+        }
+      ],
+      "title": "IconItem|StringItem"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem"
+      },
+      "title": "IconItem|StringItem[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "children": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@IconItem|StringItem[]",
+          "title": "Children"
+        }
+      },
+      "required": [
+        "label",
+        "children"
+      ],
+      "title": "Section"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section"
+      },
+      "title": "Section[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "sections": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Section[]",
+          "title": "Sections"
         }
       },
       "required": [],
-      "title": "deco-sites/hackathon-ref/sections/GetStarted.tsx@Props"
+      "title": "deco-sites/fashion/components/footer/Footer.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0hlYWQudHN4@Props": {
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps": {
+      "type": "object",
+      "properties": {
+        "placeholder": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Placeholder",
+          "description": "Search bar default placeholder message",
+          "default": "What are you looking for?"
+        },
+        "action": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Page path",
+          "description": "When user clicks on the search button, navigate it to",
+          "default": "/s"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Term name",
+          "description": "Querystring param used when navigating the user",
+          "default": "q"
+        },
+        "query": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Query"
+        }
+      },
+      "required": [],
+      "title": "EditableProps"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "title": "Label"
+              },
+              "href": {
+                "type": "string",
+                "title": "Href"
+              },
+              "children": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "title": "Label"
+                    },
+                    "href": {
+                      "type": "string",
+                      "title": "Href"
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "href"
+                  ]
+                },
+                "title": "Children"
+              }
+            },
+            "required": [
+              "label",
+              "href"
+            ]
+          },
+          "title": "Children"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+              "title": "Src"
+            },
+            "alt": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "title": "Alt"
+            }
+          },
+          "required": [],
+          "title": "Image"
+        }
+      },
+      "required": [
+        "label",
+        "href"
+      ],
+      "title": "NavItem"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem"
+      },
+      "title": "NavItem[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "alerts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Alerts"
+        },
+        "searchbar": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaGJhci50c3g=@EditableProps",
+          "title": "Search Bar"
+        },
+        "navItems": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@NavItem[]",
+          "title": "Navigation items",
+          "description": "Navigation items used both on mobile and desktop menus"
+        },
+        "products": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
+          "title": "Product suggestions",
+          "description": "Product suggestions displayed on search"
+        },
+        "suggestions": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Suggestion|null",
+          "title": "Enable Top Search terms"
+        }
+      },
+      "required": [
+        "alerts"
+      ],
+      "title": "deco-sites/fashion/components/header/Header.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Highlight": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src"
+        },
+        "alt": {
+          "type": "string",
+          "title": "Alt"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        },
+        "label": {
+          "type": "string",
+          "title": "Label"
+        }
+      },
+      "required": [
+        "src",
+        "alt",
+        "href",
+        "label"
+      ],
+      "title": "Highlight"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Highlight[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Highlight"
+      },
+      "title": "Highlight[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "highlights": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Highlight[]",
+          "title": "Highlights"
+        },
+        "title": {
+          "type": "string",
+          "title": "Title"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "title": "deco-sites/fashion/components/ui/Highlights.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "label",
+        "href"
+      ],
+      "title": "Link"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link"
+      },
+      "title": "Link[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Social": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "Instagram"
+            },
+            {
+              "type": "string",
+              "const": "Facebook"
+            }
+          ],
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "label",
+        "href"
+      ],
+      "title": "Social"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Social[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Social"
+      },
+      "title": "Social[]"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Description"
+        },
+        "links": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Link[]",
+          "title": "Links"
+        },
+        "bgImage": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Bg Image"
+        },
+        "avatar": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Avatar"
+        },
+        "social": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Social[]",
+          "title": "Social"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/fashion/components/ui/LinkTree.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0RGV0YWlscy50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductDetailsPage|null",
+          "title": "Page"
+        },
+        "variant": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "front-back"
+            },
+            {
+              "type": "string",
+              "const": "slider"
+            },
+            {
+              "type": "string",
+              "const": "auto"
+            }
+          ],
+          "type": "string",
+          "title": "Product view",
+          "description": "Ask for the developer to remove this option since this is here to help development only and should not be used in production"
+        }
+      },
+      "required": [
+        "page"
+      ],
+      "title": "deco-sites/fashion/components/product/ProductDetails.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@Props": {
       "type": "object",
       "properties": {
         "title": {
           "type": "string",
           "title": "Title"
         },
-        "description": {
+        "products": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@Product[]|null",
+          "title": "Products"
+        },
+        "itemsPerPage": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Items Per Page"
+        }
+      },
+      "required": [
+        "title",
+        "products"
+      ],
+      "title": "deco-sites/fashion/components/product/ProductShelf.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0R2FsbGVyeS50c3g=@Columns": {
+      "type": "object",
+      "properties": {
+        "mobile": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Mobile"
+        },
+        "desktop": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Desktop"
+        }
+      },
+      "required": [],
+      "title": "Columns"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaFJlc3VsdC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "page": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tbWVyY2UvdHlwZXMudHM=@ProductListingPage|null",
+          "title": "Page"
+        },
+        "variant": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "aside"
+            },
+            {
+              "type": "string",
+              "const": "drawer"
+            }
+          ],
           "type": "string",
-          "title": "Description"
+          "description": "Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products",
+          "title": "Variant"
+        },
+        "columns": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0R2FsbGVyeS50c3g=@Columns",
+          "description": "Number of products per line on grid",
+          "title": "Columns"
+        }
+      },
+      "required": [
+        "page",
+        "columns"
+      ],
+      "title": "deco-sites/fashion/components/search/SearchResult.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1RpbWVycy9DYW1wYWlnblRpbWVyLlBvcnJhbF8yOC41LnRzeA==@Props": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
         },
         "url": {
           "type": "string",
           "title": "Url"
         },
-        "imageUrl": {
-          "type": "string",
-          "title": "Image Url"
+        "wordLink": {
+          "type": "number",
+          "description": "Number of the word that will redirect to the event page",
+          "title": "Word Link"
         },
-        "faviconUrl": {
+        "endDate": {
           "type": "string",
-          "title": "Favicon Url"
+          "description": "It must be in 'MMM DD YYYY HH:mm' formata",
+          "title": "End Date"
         },
-        "themeColor": {
+        "buttonText": {
           "type": "string",
-          "title": "Theme Color"
+          "title": "Button text"
         }
       },
       "required": [
         "title",
-        "description",
         "url",
-        "imageUrl",
-        "faviconUrl",
-        "themeColor"
+        "wordLink",
+        "endDate",
+        "buttonText"
       ],
-      "title": "deco-sites/hackathon-ref/sections/Head.tsx@Props"
+      "title": "deco-sites/fashion/sections/Timers/CampaignTimer.Porral_28.5.tsx@Props"
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvV2hhdHNBcHAudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "phone": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Phone"
+        }
+      },
+      "required": [],
+      "title": "deco-sites/fashion/components/ui/WhatsApp.tsx@Props"
     },
     "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy9BbmFseXRpY3MudHN4@Props": {
       "type": "object",
@@ -7287,7 +8540,7 @@
       "properties": {
         "label": {
           "type": "string",
-          "title": "Label"
+          "title": "Locale"
         },
         "authToken": {
           "type": "string",
@@ -7363,7 +8616,7 @@
             "string",
             "null"
           ],
-          "title": "Canonical",
+          "title": "Canonical URL",
           "default": "https://example.com"
         },
         "imageUrl": {
@@ -7393,7 +8646,7 @@
         },
         "titleTemplate": {
           "type": "string",
-          "title": "Title Template",
+          "title": "Title template",
           "description": "add a %s whenever you want it to be replaced with the product name",
           "default": "%s | Fashion Store"
         },
@@ -7402,7 +8655,7 @@
             "string",
             "null"
           ],
-          "title": "Description",
+          "title": "Meta tag description",
           "description": "If not set, the product description will be used instead"
         },
         "themeColor": {
@@ -7654,7 +8907,11 @@
         },
         "name": {
           "type": "string",
-          "title": "Name"
+          "title": "The audience name (will be used on cookies).",
+          "description": "Add a meaningful short word for the audience name.",
+          "maxLength": 22,
+          "minLength": 3,
+          "pattern": "^[A-Za-z0-9_]+$"
         },
         "routes": {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2ZsYWdzL2F1ZGllbmNlLnRz@Route[]",
@@ -7770,7 +9027,7 @@
       ],
       "title": "WorkflowRef"
     },
-    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|a644f04e64ddc307d5353346f01dc4c2": {
+    "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@6fafe0f553db3c0685828404a37be338|WorkflowRef": {
       "anyOf": [
         {
           "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef"
@@ -7788,13 +9045,13 @@
           ]
         }
       ],
-      "title": "WorkflowRef|a644f04e64ddc307d5353346f01dc4c2"
+      "title": "6fafe0f553db3c0685828404a37be338|WorkflowRef"
     },
     "ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@Props": {
       "type": "object",
       "properties": {
         "workflow": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@WorkflowRef|a644f04e64ddc307d5353346f01dc4c2",
+          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2FjdGlvbnMvd29ya2Zsb3dzL3N0YXJ0LnRz@6fafe0f553db3c0685828404a37be338|WorkflowRef",
           "title": "Workflow"
         },
         "id": {
@@ -8147,6 +9404,72 @@
       ],
       "title": "deco-sites/std/packs/vtex/actions/cart/updateProfile.ts@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL25ld2xldHRlci9zdWJzY3JpYmUudHM=@Props": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "title": "Email"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Name"
+        },
+        "page": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Page"
+        },
+        "part": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Part"
+        },
+        "campaing": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Campaing"
+        }
+      },
+      "required": [
+        "email"
+      ],
+      "title": "deco-sites/std/packs/vtex/actions/newletter/subscribe.ts@Props"
+    },
+    "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL25vdGlmeW1lLnRz@Props": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "title": "Email"
+        },
+        "skuId": {
+          "type": "string",
+          "title": "Sku Id"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Name"
+        }
+      },
+      "required": [
+        "email",
+        "skuId"
+      ],
+      "title": "deco-sites/std/packs/vtex/actions/notifyme.ts@Props"
+    },
     "ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL3dpc2hsaXN0L2FkZEl0ZW0udHM=@Props": {
       "type": "object",
       "properties": {
@@ -8177,28 +9500,6 @@
         "id"
       ],
       "title": "deco-sites/std/packs/vtex/actions/wishlist/removeItem.ts@Props"
-    },
-    "ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL2Z1bmN0aW9ucy9Mb2FkR2l0SHViUmF3LnRz": {
-      "title": "GitHub Raw Loader",
-      "description": "Grabs data from a GitHub repo",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL2Z1bmN0aW9ucy9Mb2FkR2l0SHViUmF3LnRz@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/hackathon-ref/functions/LoadGitHubRaw.ts"
-          ],
-          "default": "deco-sites/hackathon-ref/functions/LoadGitHubRaw.ts"
-        }
-      }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU0Fkcy50cw==": {
       "title": "Butter CMS Featured Ads Loader",
@@ -8420,7 +9721,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0TGlzdC50cw==": {
-      "title": "Product list loader",
+      "title": "Shopify - Search Products",
       "description": "Usefull for shelves and static galleries.",
       "type": "object",
       "allOf": [
@@ -8442,7 +9743,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Nob3BpZnlQcm9kdWN0TGlzdGluZ1BhZ2UudHM=": {
-      "title": "Product listing page loader",
+      "title": "Shopify - Product Listing page",
       "description": "Returns data ready for search pages like category,brand pages",
       "type": "object",
       "allOf": [
@@ -8481,8 +9782,8 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdC50cw==": {
-      "title": "Product list loader",
-      "description": "Usefull for shelves and static galleries.",
+      "title": "VNDA - Search Products",
+      "description": "Use it in Shelves and static Galleries.",
       "type": "object",
       "allOf": [
         {
@@ -8503,8 +9804,8 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3ZuZGFQcm9kdWN0TGlzdGluZ1BhZ2UudHM=": {
-      "title": "Product listing page loader",
-      "description": "Returns data ready for search pages like category,brand pages",
+      "title": "VNDA - Product Listing page",
+      "description": "Useful for category, search, brand and collection pages.",
       "type": "object",
       "allOf": [
         {
@@ -8543,7 +9844,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdC50cw==": {
-      "title": "VTEX product list - legacy (deprecated)",
+      "title": "VTEX - Search Products - legacy (deprecated)",
       "description": "Usefull for shelves and static galleries.",
       "deprecated": true,
       "type": "object",
@@ -8566,8 +9867,8 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lQcm9kdWN0TGlzdGluZ1BhZ2UudHM=": {
-      "title": "VTEX product listing page - legacy (deprecated)",
-      "description": "Returns data ready for search pages like category,brand pages",
+      "title": "VTEX Legacy - Product Listing page",
+      "description": "Useful for category, search, brand and collection pages.",
       "deprecated": true,
       "type": "object",
       "allOf": [
@@ -8589,7 +9890,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhMZWdhY3lSZWxhdGVkUHJvZHVjdHNMb2FkZXIudHM=": {
-      "title": "VTEX related products - legacy (deprecated)",
+      "title": "VTEX Legacy - Related Products (deprecated)",
       "description": "Works on routes of type /:slug/p",
       "deprecated": true,
       "type": "object",
@@ -8634,8 +9935,8 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0RGV0YWlsc1BhZ2UudHM=": {
-      "title": "VTEX product details page - Intelligent Search (deprecated)",
-      "description": "Works on routes of type /:slug/p",
+      "title": "VTEX Intelligent Search - Product Details page",
+      "description": "For routes of type /:slug/p",
       "deprecated": true,
       "type": "object",
       "required": [
@@ -8652,8 +9953,8 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdC50cw==": {
-      "title": "VTEX product list - Intelligent Search (deprecated)",
-      "description": "Usefull for shelves and static galleries.",
+      "title": "VTEX Intelligent Search - Search Products",
+      "description": "Use it in Shelves and static Galleries.",
       "deprecated": true,
       "type": "object",
       "allOf": [
@@ -8675,8 +9976,8 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhQcm9kdWN0TGlzdGluZ1BhZ2UudHM=": {
-      "title": "VTEX product listing page - Intelligent Search (deprecated)",
-      "description": "Returns data ready for search pages like category,brand pages",
+      "title": "VTEX Intelligent Search - Product Listing page",
+      "description": "Useful for category, search, brand and collection pages.",
       "deprecated": true,
       "type": "object",
       "allOf": [
@@ -8720,8 +10021,8 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL3Z0ZXhXaXNobGlzdC50cw==": {
-      "title": "Product list loader",
-      "description": "Usefull for shelves and static galleries.",
+      "title": "VTEX - Load Wishlist",
+      "description": "Used with vtex.wish-list app",
       "deprecated": true,
       "type": "object",
       "allOf": [
@@ -8953,7 +10254,7 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2ludGVsbGlnZW50U2VhcmNoL3Byb2R1Y3RMaXN0aW5nUGFnZS50cw==": {
-      "title": "VTEX product listing page - Intelligent Search",
+      "title": "VTEX Intelligent Search - Product Listing page",
       "description": "Returns data ready for search pages like category,brand pages",
       "type": "object",
       "allOf": [
@@ -8996,8 +10297,8 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2xlZ2FjeS9wcm9kdWN0RGV0YWlsc1BhZ2UudHM=": {
-      "title": "VTEX product details page - Portal",
-      "description": "Works on routes of type /:slug/p",
+      "title": "VTEX Legacy - Product Details page",
+      "description": "For routes of type /:slug/p",
       "type": "object",
       "allOf": [
         {
@@ -9018,8 +10319,8 @@
       }
     },
     "ZGVjby1zaXRlcy9zdGQvbG9hZGVycy92dGV4L2xlZ2FjeS9wcm9kdWN0TGlzdC50cw==": {
-      "title": "VTEX product list - Portal",
-      "description": "Usefull for shelves and static galleries.",
+      "title": "VTEX Legacy - Search Products",
+      "description": "Use it in Shelves and static Galleries.",
       "type": "object",
       "allOf": [
         {
@@ -9138,6 +10439,208 @@
             "deco-sites/std/loaders/vtex/wishlist.ts"
           ],
           "default": "deco-sites/std/loaders/vtex/wishlist.ts"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL0FkZFRvQ2FydEJ1dHRvbi50c3g=": {
+      "title": "./islands/AddToCartButton.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/AddToCartButton.tsx"
+          ],
+          "default": "./islands/AddToCartButton.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL0NhbXBhaWduVGltZXItUG9ycmFsXzI4LTUudHN4": {
+      "title": "./islands/CampaignTimer-Porral_28-5.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2lzbGFuZHMvQ2FtcGFpZ25UaW1lci1Qb3JyYWxfMjgtNS50c3g=@TimerProps"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/CampaignTimer-Porral_28-5.tsx"
+          ],
+          "default": "./islands/CampaignTimer-Porral_28-5.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g=": {
+      "title": "./islands/HeaderButton.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/HeaderButton.tsx"
+          ],
+          "default": "./islands/HeaderButton.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g=": {
+      "title": "./islands/HeaderModals.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/HeaderModals.tsx"
+          ],
+          "default": "./islands/HeaderModals.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL0hlYWRlclNlYXJjaGJhci50c3g=": {
+      "title": "./islands/HeaderSearchbar.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/HeaderSearchbar.tsx"
+          ],
+          "default": "./islands/HeaderSearchbar.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL05ld3NsZXR0ZXIudHN4": {
+      "title": "./islands/Newsletter.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/Newsletter.tsx"
+          ],
+          "default": "./islands/Newsletter.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL091dE9mU3RvY2sudHN4": {
+      "title": "./islands/OutOfStock.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/OutOfStock.tsx"
+          ],
+          "default": "./islands/OutOfStock.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL1Byb2R1Y3RJbWFnZVpvb20udHN4": {
+      "title": "./islands/ProductImageZoom.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/ProductImageZoom.tsx"
+          ],
+          "default": "./islands/ProductImageZoom.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL1NlYXJjaENvbnRyb2xzLnRzeA==": {
+      "title": "./islands/SearchControls.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/SearchControls.tsx"
+          ],
+          "default": "./islands/SearchControls.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL1NoaXBwaW5nU2ltdWxhdGlvbi50c3g=": {
+      "title": "./islands/ShippingSimulation.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvU2hpcHBpbmdTaW11bGF0aW9uLnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/ShippingSimulation.tsx"
+          ],
+          "default": "./islands/ShippingSimulation.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL1NsaWRlckpTLnRzeA==": {
+      "title": "./islands/SliderJS.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/SliderJS.tsx"
+          ],
+          "default": "./islands/SliderJS.tsx"
+        }
+      }
+    },
+    "Li9pc2xhbmRzL1dpc2hsaXN0QnV0dG9uLnRzeA==": {
+      "title": "./islands/WishlistButton.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/WishlistButton.tsx"
+          ],
+          "default": "./islands/WishlistButton.tsx"
         }
       }
     },
@@ -9376,12 +10879,12 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=": {
-      "title": "deco-sites/hackathon-ref/sections/DesignSystem.tsx",
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4": {
+      "title": "deco-sites/fashion/sections/BannerGrid.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyR3JpZC50c3g=@Props"
         }
       ],
       "required": [
@@ -9391,18 +10894,18 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/hackathon-ref/sections/DesignSystem.tsx"
+            "deco-sites/fashion/sections/BannerGrid.tsx"
           ],
-          "default": "deco-sites/hackathon-ref/sections/DesignSystem.tsx"
+          "default": "deco-sites/fashion/sections/BannerGrid.tsx"
         }
       }
     },
-    "ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0dldFN0YXJ0ZWQudHN4": {
-      "title": "deco-sites/hackathon-ref/sections/GetStarted.tsx",
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lclBMUC50c3g=": {
+      "title": "deco-sites/fashion/sections/BannerPLP.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0dldFN0YXJ0ZWQudHN4@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyUExQLnRzeA==@Props"
         }
       ],
       "required": [
@@ -9412,18 +10915,18 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/hackathon-ref/sections/GetStarted.tsx"
+            "deco-sites/fashion/sections/BannerPLP.tsx"
           ],
-          "default": "deco-sites/hackathon-ref/sections/GetStarted.tsx"
+          "default": "deco-sites/fashion/sections/BannerPLP.tsx"
         }
       }
     },
-    "ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0hlYWQudHN4": {
-      "title": "deco-sites/hackathon-ref/sections/Head.tsx",
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA==": {
+      "title": "deco-sites/fashion/sections/Carousel.tsx",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0hlYWQudHN4@Props"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvQmFubmVyQ2Fyb3VzZWwudHN4@Props"
         }
       ],
       "required": [
@@ -9433,9 +10936,277 @@
         "__resolveType": {
           "type": "string",
           "enum": [
-            "deco-sites/hackathon-ref/sections/Head.tsx"
+            "deco-sites/fashion/sections/Carousel.tsx"
           ],
-          "default": "deco-sites/hackathon-ref/sections/Head.tsx"
+          "default": "deco-sites/fashion/sections/Carousel.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nvb2tpZUNvbnNlbnQudHN4": {
+      "title": "deco-sites/fashion/sections/CookieConsent.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/CookieConsent.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/CookieConsent.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=": {
+      "title": "deco-sites/fashion/sections/DesignSystem.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/DesignSystem.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/DesignSystem.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ZlYXR1cmVzLnRzeA==": {
+      "title": "deco-sites/fashion/sections/Features.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvRmVhdHVyZXMudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Features.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Features.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Zvb3Rlci50c3g=": {
+      "title": "deco-sites/fashion/sections/Footer.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvZm9vdGVyL0Zvb3Rlci50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Footer.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Footer.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlci50c3g=": {
+      "title": "deco-sites/fashion/sections/Header.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvaGVhZGVyL0hlYWRlci50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Header.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Header.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hpZ2hsaWdodHMudHN4": {
+      "title": "deco-sites/fashion/sections/Highlights.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvSGlnaGxpZ2h0cy50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Highlights.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Highlights.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0xpbmtUcmVlLnRzeA==": {
+      "title": "deco-sites/fashion/sections/LinkTree.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvTGlua1RyZWUudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/LinkTree.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/LinkTree.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3REZXRhaWxzLnRzeA==": {
+      "title": "deco-sites/fashion/sections/ProductDetails.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0RGV0YWlscy50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/ProductDetails.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/ProductDetails.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZi50c3g=": {
+      "title": "deco-sites/fashion/sections/ProductShelf.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvcHJvZHVjdC9Qcm9kdWN0U2hlbGYudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/ProductShelf.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/ProductShelf.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NlYXJjaFJlc3VsdC50c3g=": {
+      "title": "deco-sites/fashion/sections/SearchResult.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaFJlc3VsdC50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/SearchResult.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/SearchResult.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1RpbWVycy9DYW1wYWlnblRpbWVyLlBvcnJhbF8yOC41LnRzeA==": {
+      "title": "deco-sites/fashion/sections/Timers/CampaignTimer.Porral_28.5.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1RpbWVycy9DYW1wYWlnblRpbWVyLlBvcnJhbF8yOC41LnRzeA==@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/Timers/CampaignTimer.Porral_28.5.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/Timers/CampaignTimer.Porral_28.5.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1doYXRzQXBwLnRzeA==": {
+      "title": "deco-sites/fashion/sections/WhatsApp.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvdWkvV2hhdHNBcHAudHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/WhatsApp.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/WhatsApp.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1dpc2hsaXN0R2FsbGVyeS50c3g=": {
+      "title": "deco-sites/fashion/sections/WishlistGallery.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL2NvbXBvbmVudHMvc2VhcmNoL1NlYXJjaFJlc3VsdC50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/fashion/sections/WishlistGallery.tsx"
+          ],
+          "default": "deco-sites/fashion/sections/WishlistGallery.tsx"
         }
       }
     },
@@ -10195,6 +11966,50 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L25ld3NsZXR0ZXIvc3Vic2NyaWJlLnRz": {
+      "title": "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
+      "docs": "https://developers.vtex.com/docs/api-reference/checkout-api#post-/api/checkout/pub/orderForm/-orderFormId-/items",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL25ld2xldHRlci9zdWJzY3JpYmUudHM=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/actions/vtex/newsletter/subscribe.ts"
+          ],
+          "default": "deco-sites/std/actions/vtex/newsletter/subscribe.ts"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L25vdGlmeW1lLnRz": {
+      "title": "deco-sites/std/actions/vtex/notifyme.ts",
+      "docs": "https://developers.vtex.com/docs/api-reference/checkout-api#post-/api/checkout/pub/orderForm/-orderFormId-/items",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvcGFja3MvdnRleC9hY3Rpb25zL25vdGlmeW1lLnRz@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/std/actions/vtex/notifyme.ts"
+          ],
+          "default": "deco-sites/std/actions/vtex/notifyme.ts"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L3dpc2hsaXN0L2FkZEl0ZW0udHM=": {
       "title": "deco-sites/std/actions/vtex/wishlist/addItem.ts",
       "type": "object",
@@ -10254,21 +12069,6 @@
       ],
       "title": "deco-cx/live/routes/_middleware.ts@MiddlewareConfig",
       "description": "Global configurations for ./routes/_middleware.ts route"
-    },
-    "ZGVjby1jeC9saXZlL3JvdXRlcy9bLi4uY2F0Y2hhbGxdLnRzeA==@Entrypoint": {
-      "type": "object",
-      "properties": {
-        "handler": {
-          "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler",
-          "description": "configure how to handle requests.",
-          "title": "Handler"
-        }
-      },
-      "required": [
-        "handler"
-      ],
-      "title": "deco-cx/live/routes/[...catchall].tsx@Entrypoint",
-      "description": "Site entrypoint, configure your audiences and routes."
     }
   },
   "root": {
@@ -10277,9 +12077,6 @@
       "anyOf": [
         {
           "$ref": "#/definitions/Resolvable"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL2Z1bmN0aW9ucy9Mb2FkR2l0SHViUmF3LnRz"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvZnVuY3Rpb25zL2J1dHRlckNNU0Fkcy50cw=="
@@ -10437,6 +12234,54 @@
         }
       ]
     },
+    "routes": {
+      "title": "routes",
+      "anyOf": []
+    },
+    "islands": {
+      "title": "islands",
+      "anyOf": [
+        {
+          "$ref": "#/definitions/Resolvable"
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0FkZFRvQ2FydEJ1dHRvbi50c3g="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0NhbXBhaWduVGltZXItUG9ycmFsXzI4LTUudHN4"
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlckJ1dHRvbi50c3g="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL0hlYWRlclNlYXJjaGJhci50c3g="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL05ld3NsZXR0ZXIudHN4"
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL091dE9mU3RvY2sudHN4"
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL1Byb2R1Y3RJbWFnZVpvb20udHN4"
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL1NlYXJjaENvbnRyb2xzLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL1NoaXBwaW5nU2ltdWxhdGlvbi50c3g="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL1NsaWRlckpTLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/Li9pc2xhbmRzL1dpc2hsaXN0QnV0dG9uLnRzeA=="
+        }
+      ]
+    },
     "handlers": {
       "title": "handlers",
       "anyOf": [
@@ -10493,13 +12338,52 @@
           "$ref": "#/definitions/JGxpdmUvc2VjdGlvbnMvVXNlU2xvdC50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lckdyaWQudHN4"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0dldFN0YXJ0ZWQudHN4"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Jhbm5lclBMUC50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9oYWNrYXRob24tcmVmL3NlY3Rpb25zL0hlYWQudHN4"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nhcm91c2VsLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Nvb2tpZUNvbnNlbnQudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Rlc2lnblN5c3RlbS50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0ZlYXR1cmVzLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0Zvb3Rlci50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hlYWRlci50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0hpZ2hsaWdodHMudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL0xpbmtUcmVlLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3REZXRhaWxzLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1Byb2R1Y3RTaGVsZi50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1NlYXJjaFJlc3VsdC50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1RpbWVycy9DYW1wYWlnblRpbWVyLlBvcnJhbF8yOC41LnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1doYXRzQXBwLnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9mYXNoaW9uL3NlY3Rpb25zL1dpc2hsaXN0R2FsbGVyeS50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvc2VjdGlvbnMvQW5hbHl0aWNzLnRzeA=="
@@ -10634,12 +12518,22 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L2NhcnQvdXBkYXRlVXNlci50cw=="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L25ld3NsZXR0ZXIvc3Vic2NyaWJlLnRz"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L25vdGlmeW1lLnRz"
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L3dpc2hsaXN0L2FkZEl0ZW0udHM="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvYWN0aW9ucy92dGV4L3dpc2hsaXN0L3JlbW92ZUl0ZW0udHM="
         }
       ]
+    },
+    "workflows": {
+      "title": "workflows",
+      "anyOf": []
     },
     "entrypoint": {
       "type": "object",
@@ -10659,14 +12553,14 @@
         "./routes/[...catchall].tsx": {
           "anyOf": [
             {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL3JvdXRlcy9bLi4uY2F0Y2hhbGxdLnRzeA==@Entrypoint"
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler"
             }
           ]
         },
         "./routes/index.tsx": {
           "anyOf": [
             {
-              "$ref": "#/definitions/ZGVjby1jeC9saXZlL3JvdXRlcy9bLi4uY2F0Y2hhbGxdLnRzeA==@Entrypoint"
+              "$ref": "#/definitions/ZGVjby1jeC9saXZlL2Jsb2Nrcy9oYW5kbGVyLnRz@Handler"
             }
           ]
         }
@@ -10690,6 +12584,12 @@
             "$ref": "#/root/loaders"
           },
           {
+            "$ref": "#/root/routes"
+          },
+          {
+            "$ref": "#/root/islands"
+          },
+          {
             "$ref": "#/root/handlers"
           },
           {
@@ -10706,6 +12606,9 @@
           },
           {
             "$ref": "#/root/actions"
+          },
+          {
+            "$ref": "#/root/workflows"
           }
         ]
       }

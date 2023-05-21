@@ -1,19 +1,20 @@
 import { AppProps } from "$fresh/server.ts";
-import { context } from "$live/live.ts";
-import GoogleTagManager from "partytown/integrations/GTM.tsx";
-import GlobalTags from "deco-sites/start/components/GlobalTags.tsx";
+import GlobalTags from "$store/components/GlobalTags.tsx";
+import DesignSystem from "$store/sections/DesignSystem.tsx";
 
-const trackingId = "";
-
-export default function App(props: AppProps) {
+function App(props: AppProps) {
   return (
     <>
+      {/* Include default fonts and css vars */}
+      <DesignSystem />
+
+      {/* Include Icons and manifest */}
       <GlobalTags />
-      {/* Add Tag Manager script during production only. To test it locally remove the condition */}
-      {!!context.deploymentId && trackingId && (
-        <GoogleTagManager trackingId={trackingId} />
-      )}
+
+      {/* Rest of Preact tree */}
       <props.Component />
     </>
   );
 }
+
+export default App;
